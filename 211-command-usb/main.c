@@ -57,7 +57,7 @@ struct command_t {
     command_handler_t handler;
 };
 
-struct command_t commands[] = {
+const struct command_t commands[] = {
     { "enable", cmd_enable },
     { "disable", cmd_disable },
     { "info", cmd_info },
