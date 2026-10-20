@@ -4,6 +4,7 @@
 #include "pico/stdlib.h"
 #include "command.h"
 #include "device.h"
+#include <stdlib.h>
 
 extern char __flash_binary_start;
 extern char __flash_binary_end;
