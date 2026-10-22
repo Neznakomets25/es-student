@@ -3,13 +3,13 @@
 устройство: 2e8a:000a
 серийный номер: 53032847486A8A1C
 порт: COM5
-начало: 2026-10-23T00:41:51
+начало: 2026-10-23T00:47:25
    0.000 --> dev_info
-   0.171 <-- dev_info
-   0.171 <-- dbg read_line:99 got dev_info
-   0.172 <-- device_card   0x20000f88    20
-   0.173 <-- - version       0x20000f88     4      0 0x00010000
-   0.173 <-- - revision      0x20000f99     1     17 2
-   0.174 <-- - name          0x20000f8c    13      4 nordway
-   0.174 <-- fields 18, sizeof 20, padding 2
+   0.164 <-- dev_info
+   0.165 <-- dbg read_line:99 got dev_info
+   0.165 <-- device_card   0x20000f88    20
+   0.166 <-- - version       0x20000f88     4      0 0x00010000
+   0.166 <-- - revision      0x20000f99     1     17 2
+   0.167 <-- - name          0x20000f8c    13      4 nordway
+   0.167 <-- fields 18, sizeof 20, padding 2
 итог: отправлено команд 1, принято строк 7
