@@ -27,6 +27,7 @@ void device_info(void) {
 struct info_t device_card = {0x00010000, "nordway", 2};
 
 void dev_info(void) {
+    printf("%-13s %-10s %5s %6s %s\n", "struct", "address", "size", "offset", "value");
       printf("%-13s 0x%08x %5u\n",
            "device_card",
            (unsigned)(uintptr_t)&device_card,
