@@ -124,7 +124,7 @@ void boot_info(void) {
 
     uint32_t level = (*GPIO_IN_REG >> led_pin()) & 1u;
 
-    printf("%-15s0x%08x\n", "gpio in", (uintptr_t)GPIO_IN);
+    printf("%-15s0x%08x\n", "gpio in", (uintptr_t)GPIO_IN_REG);
     printf("  %-13s%u\n", "led bit", level);
     printf("  %-13s%u\n", "gpio_get", gpio_get(led_pin()));
 }
