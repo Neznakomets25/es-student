@@ -2,7 +2,7 @@
 #include <stdint.h>
 
 #define DEVICE_NAME "es-led-module"
-#define FIRMWARE_VERSION "1.0.0"
+#define FIRMWARE_VERSION "1.1.0"
 #define DEVICE_PROJECT "221-command-time"
 #define DEVICE_REPO "https://github.com/Neznakomets25/es-student"
 
