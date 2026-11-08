@@ -13,7 +13,6 @@
 char line[LINE_SIZE];
 uint line_length = 0;
 
-
 void cmd_info(void)
 {
     device_info();
@@ -54,6 +53,8 @@ void cmd_uptime(void)
     uptime();
 }
 
+void cmd_calc_pi(void);
+
 const struct command_t commands[] = {
     { "info", cmd_info },
     { "version", cmd_version },
@@ -63,7 +64,8 @@ const struct command_t commands[] = {
     { "dev_info", cmd_dev_info },
     { "boot_info", cmd_boot_info },
     { "clk_info", cmd_clk_info},
-    { "uptime", cmd_uptime }
+    { "uptime", cmd_uptime },
+    { "calc_pi", cmd_calc_pi }
 };
 
 const uint command_count =  sizeof(commands) / sizeof(commands[0]);
@@ -119,6 +121,29 @@ void blink(void)
         last_toggle_us = now_us;
         led_toggle();
     }
+}
+
+const uint CALC_PI_TERMS = 1000000; //1 000 000 × 585 / 125 000 000 ≈ 4,68 секунды
+
+double calc_pi(uint terms) {
+    double pi_sum = 0;
+    double pi_sign = 1;
+    for (uint k = 0; k < terms; k++) {
+        pi_sum += pi_sign/(2.0*k + 1.0);
+        pi_sign *= -1; 
+    }
+    return pi_sum * 4;
+}
+
+volatile double pi_result;
+
+void cmd_calc_pi(void) {
+    uint64_t start_us = time_us_64();
+    pi_result = calc_pi(CALC_PI_TERMS);
+    uint64_t spent_us = time_us_64() - start_us;
+    printf("pi: %.8f\n", pi_result);
+printf("time: %llu ms\n",
+       (unsigned long long)(spent_us / 1000));
 }
 
 int main(void)
